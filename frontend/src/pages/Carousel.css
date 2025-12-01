@@ -1,0 +1,145 @@
+.carousel-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-carousel-track {
+    display: flex;
+    gap: 0;
+    animation: scrollHorizontal 40s linear infinite;
+    will-change: transform;
+    height: 100%;
+}
+
+@keyframes scrollHorizontal {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.grid-3x4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0;
+    flex-shrink: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid-cell {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.grid-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    pointer-events: none;
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.overlay-logo {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+.sih-logo {
+    height: 160px;
+}
+
+.overlay-text {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.15em;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+}
+
+@media (max-width: 1200px) {
+    .overlay-logo {
+        height: 100px;
+    }
+
+    .sih-logo {
+        height: 140px;
+    }
+
+    .overlay-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        gap: 2rem;
+    }
+
+    .overlay-logo {
+        height: 80px;
+    }
+
+    .sih-logo {
+        height: 110px;
+    }
+
+    .overlay-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .overlay-logo {
+        height: 60px;
+    }
+
+    .sih-logo {
+        height: 80px;
+    }
+
+    .overlay-text {
+        font-size: 1.5rem;
+    }
+}
